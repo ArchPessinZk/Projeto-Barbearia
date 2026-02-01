@@ -79,6 +79,24 @@ body.dark-mode .site-header {
   color: var(--dark);
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+body.dark-mode .logo {
+  color: var(--text);
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
 }
 
 .logo svg {
@@ -418,7 +436,6 @@ body.dark-mode .galeria {
 
 body.dark-mode .sobre {
   background: #0f0f0f;
-}
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -562,6 +579,34 @@ body.dark-mode .sobre {
 body.dark-mode .footer {
   background: #000000;
   border-top-color: #333333;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-footer {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+.footer-logo h3 {
+  font-size: 14px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Responsivo */
