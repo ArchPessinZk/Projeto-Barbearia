@@ -1,4 +1,3 @@
-// Menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
 
@@ -9,7 +8,6 @@ if (menuToggle) {
   });
 }
 
-// Close menu when link is clicked
 const navLinks = document.querySelectorAll('.mobile-nav a');
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -18,18 +16,15 @@ navLinks.forEach(link => {
   });
 });
 
-// Theme Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
 
-// Load saved theme preference
 const savedTheme = localStorage.getItem('theme') || 'light';
 if (savedTheme === 'dark') {
   document.body.classList.add('dark-mode');
   themeIcon.textContent = '☀️';
 }
 
-// Toggle theme
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
@@ -44,16 +39,55 @@ if (themeToggle) {
   });
 }
 
-// Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
     if (href !== '#' && document.querySelector(href)) {
       e.preventDefault();
       const target = document.querySelector(href);
-      const offset = 65; // header height
+      const offset = 65;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   });
 });
+
+// Service modal behavior
+const modal = document.getElementById('service-modal');
+const modalThumb = modal && modal.querySelector('.modal-thumb');
+const modalTitle = modal && modal.querySelector('.modal-title');
+const modalPrice = modal && modal.querySelector('.modal-price');
+const modalDesc = modal && modal.querySelector('.modal-desc');
+const modalClose = modal && modal.querySelector('.modal-close');
+
+function openServiceModal(card) {
+  if (!modal) return;
+  const img = card.querySelector('.servico-thumb');
+  const service = card.getAttribute('data-service') || '';
+  const price = card.getAttribute('data-price') || '';
+  const desc = card.getAttribute('data-desc') || '';
+  if (modalThumb && img) modalThumb.src = img.src;
+  if (modalTitle) modalTitle.textContent = service;
+  if (modalPrice) modalPrice.textContent = price;
+  if (modalDesc) modalDesc.textContent = desc;
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeServiceModal() {
+  if (!modal) return;
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.servico-card').forEach(card => {
+  card.addEventListener('click', () => openServiceModal(card));
+});
+
+if (modalClose) modalClose.addEventListener('click', closeServiceModal);
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    if (e.target && e.target.dataset && e.target.dataset.close) closeServiceModal();
+  });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeServiceModal(); });
+}

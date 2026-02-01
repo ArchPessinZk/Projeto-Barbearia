@@ -69,33 +69,33 @@
     <div class="container">
       <h2>SERVIÇOS</h2>
       <div class="servicos-grid">
-        <div class="servico-card">
-          <div class="servico-icon">✂️</div>
+        <div class="servico-card" data-service="Corte" data-price="R$ 45,00" data-desc="Cortes modernos e clássicos com atenção a detalhes; modernidade e inovação no acabamento.">
+          <img class="servico-thumb" src="imagens/cortedecabelo.jpg" alt="Corte de cabelo" loading="lazy">
           <h3>CORTE</h3>
           <p class="preco">R$ 45,00</p>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon">🪮</div>
+        <div class="servico-card" data-service="Barba" data-price="R$ 45,00" data-desc="Barba com navalha e acabamento preciso, hidratação e modelagem.">
+          <img class="servico-thumb" src="imagens/barba.jpg" alt="Barba" loading="lazy">
           <h3>BARBA</h3>
           <p class="preco">R$ 45,00</p>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon">💆</div>
+        <div class="servico-card" data-service="Hidratação" data-price="R$ 35,00" data-desc="Tratamento de hidratação para recuperar saúde e brilho dos fios.">
+          <img class="servico-thumb" src="imagens/hidratação.jpg" alt="Hidratação" loading="lazy">
           <h3>HIDRATAÇÃO</h3>
           <p class="preco">R$ 35,00</p>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon">🧴</div>
+        <div class="servico-card" data-service="Terapia Facial" data-price="R$ 60,00" data-desc="Limpeza e hidratação facial para preparar a pele e renovar a aparência.">
+          <img class="servico-thumb" src="imagens/terapiafacial.jpg" alt="Terapia Facial" loading="lazy">
           <h3>TERAPIA FACIAL</h3>
           <p class="preco">R$ 60,00</p>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon">🌊</div>
+        <div class="servico-card" data-service="Cone Hindu" data-price="R$ 50,00" data-desc="Tratamento relaxante e terapêutico com cone indiano.">
+          <img class="servico-thumb" src="imagens/cone.jpg" alt="Cone Hindu" loading="lazy">
           <h3>CONE HINDU</h3>
           <p class="preco">R$ 50,00</p>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon">✨</div>
+        <div class="servico-card" data-service="Camuflagem" data-price="A partir de R$ 35,00" data-desc="Procedimento para camuflagem de falhas e correções estéticas.">
+          <img class="servico-thumb" src="imagens/camuflagem.png" alt="Camuflagem" loading="lazy">
           <h3>CAMUFLAGEM</h3>
           <p class="preco">A partir de R$ 35,00</p>
         </div>
@@ -103,32 +103,32 @@
       
       <h3>TABELA COMPLETA DE PREÇOS</h3>
       <div class="servicos-grid more-services">
-        <div class="servico-card">
-          <div class="servico-icon">👁️</div>
+        <div class="servico-card" data-service="Sobrancelha" data-price="R$ 20,00" data-desc="Design de sobrancelhas com técnica profissional.">
+          <img class="servico-thumb" src="imagens/sombracelha.jpg" alt="Sobrancelha" loading="lazy">
           <h3>SOBRANCELHA</h3>
           <p class="preco">R$ 20,00</p>
         </div>
 
-        <div class="servico-card">
-          <div class="servico-icon">🦻</div>
+        <div class="servico-card" data-service="Depilação Orelha" data-price="R$ 20,00" data-desc="Remoção de pelos na orelha com segurança e conforto.">
+          <img class="servico-thumb" src="imagens/DEPILAÇÃO ORELHA.png" alt="Depilação Orelha" loading="lazy">
           <h3>DEPILAÇÃO ORELHA</h3>
           <p class="preco">R$ 20,00</p>
         </div>
 
-        <div class="servico-card">
-          <div class="servico-icon">👃</div>
+        <div class="servico-card" data-service="Depilação Nazal" data-price="R$ 20,00" data-desc="Remoção de pelos nasais com cuidado.">
+          <img class="servico-thumb" src="imagens/DEPILAÇÃO NAZAL.jpg" alt="Depilação Nazal" loading="lazy">
           <h3>DEPILAÇÃO NAZAL</h3>
           <p class="preco">R$ 20,00</p>
         </div>
 
-        <div class="servico-card">
-          <div class="servico-icon">🔧</div>
+        <div class="servico-card" data-service="Acabamento" data-price="R$ 20,00" data-desc="Ajustes finais para um visual impecável.">
+          <img class="servico-thumb" src="imagens/ACABAMENTO.jpg" alt="Acabamento" loading="lazy">
           <h3>ACABAMENTO</h3>
           <p class="preco">R$ 20,00</p>
         </div>
 
-        <div class="servico-card">
-          <div class="servico-icon">💈</div>
+        <div class="servico-card" data-service="Desondulação" data-price="A partir de R$ 90,00" data-desc="Redução de ondulações e texturização.">
+          <img class="servico-thumb" src="imagens/villas.jpg" alt="Desondulação" loading="lazy">
           <h3>DESONDULAÇÃO</h3>
           <p class="preco">A partir de R$ 90,00</p>
         </div>
@@ -212,8 +212,22 @@
           📍 VER NO GOOGLE MAPS
         </a>
       </div>
-    </div>
+      </div>
   </section>
+
+  <!-- Service modal (reused) -->
+  <div id="service-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-content" role="dialog" aria-modal="true">
+      <button class="modal-close" aria-label="Fechar">×</button>
+      <img class="modal-thumb" src="" alt="">
+      <h3 class="modal-title"></h3>
+      <p class="modal-price"></p>
+      <p class="modal-desc"></p>
+      <a href="#agendar" class="btn-servicos modal-cta">Agendar</a>
+    </div>
+  </div>
+
 </main>
 
 <footer class="footer">

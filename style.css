@@ -1,4 +1,3 @@
-/* Reset e Variáveis */
 :root {
   --primary: #4a7c7e;
   --dark: #1a1a1a;
@@ -43,7 +42,6 @@ body {
   padding: 0 20px;
 }
 
-/* Header */
 .site-header {
   position: fixed;
   top: 0;
@@ -194,7 +192,6 @@ body.dark-mode .logo {
   margin-top: 10px;
 }
 
-/* Theme Toggle */
 .theme-toggle {
   background: none;
   border: none;
@@ -217,7 +214,6 @@ body.dark-mode .logo {
 }
 
 
-/* Hero Section */
 .hero {
   margin-top: 65px;
   min-height: 600px;
@@ -287,7 +283,6 @@ body.dark-mode .logo {
   height: 500px;
 }
 
-/* Serviços */
 .servicos {
   background: #f5f5f5;
   padding: 80px 20px;
@@ -350,6 +345,93 @@ body.dark-mode .servico-card {
   line-height: 1.6;
 }
 
+.servico-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.servico-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: relative;
+  background: var(--white);
+  color: var(--text);
+  padding: 22px;
+  border-radius: 10px;
+  max-width: 640px;
+  width: 94%;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.modal-thumb {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-size: 20px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.modal-price {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.modal-desc {
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+body.dark-mode .modal-content {
+  background: #1a1a1a;
+  color: var(--text);
+}
+
 .btn-servicos {
   display: inline-block;
   background: var(--primary);
@@ -368,7 +450,6 @@ body.dark-mode .servico-card {
   background: #3d6568;
 }
 
-/* Galeria */
 .galeria {
   padding: 80px 20px;
   transition: background 0.3s;
@@ -427,7 +508,6 @@ body.dark-mode .galeria {
   color: #3d6568;
 }
 
-/* Sobre */
 .sobre {
   background: white;
   padding: 80px 20px;
@@ -492,7 +572,6 @@ body.dark-mode .sobre {
   display: block;
 }
 
-/* Contato */
 .contato {
   background: #1a1a1a;
   color: white;
@@ -589,7 +668,6 @@ body.dark-mode .contato-mapa {
   background: linear-gradient(135deg, #3d6568, #2a4a4c);
 }
 
-/* Footer */
 .footer {
   background: #111111;
   color: #999999;
@@ -633,7 +711,6 @@ body.dark-mode .footer {
   letter-spacing: 1px;
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .desktop-nav {
     display: none;
