@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="icon" type="image/jpeg" href="imagens/villas (2).jpg">
+  <link rel="icon" type="image/jpeg" href="imagens/villas.jpg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a href="#home" class="logo">
-      <img src="imagens/villas (2).jpg" alt="Villa's Barbearia" class="logo-img">
+      <img src="imagens/villas.jpg" alt="Villa's Barbearia" class="logo-img">
       <span>VILLA'S BARBEARIA</span>
     </a>
     
@@ -60,7 +60,7 @@
       <a href="#agendar" class="btn-schedule">AGENDE SEU HORÁRIO</a>
     </div>
     <div class="hero-image">
-      <img src="imagens/barber2.png" alt="Barbeiro em ação">
+      <img src="imagens/villas.jpg" alt="Barbeiro em ação">
     </div>
   </section>
 
@@ -128,7 +128,7 @@
         </div>
 
         <div class="servico-card" data-service="Desondulação" data-price="A partir de R$ 90,00" data-desc="Redução de ondulações e texturização.">
-          <img class="servico-thumb" src="imagens/villas.jpg" alt="Desondulação" loading="lazy">
+          <img class="servico-thumb" src="imagens/desondulação.png" alt="Desondulação" loading="lazy">
           <h3>DESONDULAÇÃO</h3>
           <p class="preco">A partir de R$ 90,00</p>
         </div>
@@ -142,22 +142,61 @@
     <div class="container">
       <h2>GALERIA</h2>
       <div class="galeria-grid">
-        <div class="galeria-item">
-          <img src="imagens/barber2.png" alt="Corte de cabelo">
+        <div class="galeria-item galeria-featured">
+          <img src="imagens/galeria.jpg" alt="Ambiente da barbearia" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">AMBIENTE</span>
+          </div>
         </div>
         <div class="galeria-item">
-          <img src="imagens/barber3.png" alt="Barba">
+          <img src="imagens/galeria2.png" alt="Corte premium" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">CORTE</span>
+          </div>
         </div>
         <div class="galeria-item">
-          <img src="imagens/barber4.png" alt="Barbearia">
+          <img src="imagens/galeria3.png" alt="Detalhe do trabalho" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">DETALHE</span>
+          </div>
         </div>
         <div class="galeria-item">
-          <img src="imagens/barber5.png" alt="Instrumentos">
+          <img src="imagens/galeria4.png" alt="Serviço em progresso" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">SERVIÇO</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagens/galeria5.png" alt="Profissionalismo" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">PROFISSIONAL</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagens/galeria6.png" alt="Resultado final" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">RESULTADO</span>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <img src="imagens/galeria7.png" alt="Satisfação do cliente" loading="lazy">
+          <div class="galeria-overlay">
+            <span class="galeria-label">SATISFAÇÃO</span>
+          </div>
         </div>
       </div>
-      <a href="#mais-fotos" class="btn-mais-fotos">VER MAIS FOTOS →</a>
+      <a href="#agendar" class="btn-servicos">AGENDE AGORA</a>
     </div>
   </section>
+
+  <!-- Gallery lightbox modal -->
+  <div id="gallery-modal" class="gallery-modal" aria-hidden="true">
+    <div class="gallery-modal-backdrop" data-close="true"></div>
+    <div class="gallery-modal-content" role="dialog" aria-modal="true">
+      <button class="gallery-modal-close" aria-label="Fechar">×</button>
+      <img class="gallery-modal-img" src="" alt="">
+    </div>
+  </div>
 
   <section id="sobre" class="sobre">
     <div class="container sobre-content">

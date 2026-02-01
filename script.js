@@ -91,3 +91,42 @@ if (modal) {
   });
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeServiceModal(); });
 }
+
+const heroImage = document.querySelector('.hero-image img');
+if (heroImage) {
+  const heroContainer = document.querySelector('.hero-image');
+  let mouseX = 0;
+  let mouseY = 0;
+  let rotateX = 0;
+  let rotateY = 0;
+  
+  heroContainer.addEventListener('mousemove', (e) => {
+    const rect = heroContainer.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const targetRotateX = ((y - centerY) / centerY) * 20;
+    const targetRotateY = ((x - centerX) / centerX) * 20;
+    
+    rotateX += (targetRotateX - rotateX) * 0.08;
+    rotateY += (targetRotateY - rotateY) * 0.08;
+    
+    heroImage.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  
+  heroContainer.addEventListener('mouseleave', () => {
+    const interval = setInterval(() => {
+      rotateX *= 0.9;
+      rotateY *= 0.9;
+      heroImage.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+      
+      if (Math.abs(rotateX) < 0.1 && Math.abs(rotateY) < 0.1) {
+        clearInterval(interval);
+        heroImage.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      }
+    }, 16);
+  });
+}
