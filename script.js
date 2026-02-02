@@ -130,3 +130,31 @@ if (heroImage) {
     }, 16);
   });
 }
+
+// Gallery lightbox
+const galleryModal = document.getElementById('gallery-modal');
+const galleryImg = galleryModal && galleryModal.querySelector('.gallery-modal-img');
+const galleryClose = galleryModal && galleryModal.querySelector('.gallery-modal-close');
+
+document.querySelectorAll('.galeria-clickable').forEach(img => {
+  img.addEventListener('click', (e) => {
+    if (!galleryModal || !galleryImg) return;
+    galleryImg.src = img.src;
+    galleryModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeGallery() {
+  if (!galleryModal) return;
+  galleryModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (galleryClose) galleryClose.addEventListener('click', closeGallery);
+if (galleryModal) {
+  galleryModal.addEventListener('click', (e) => {
+    if (e.target && e.target.dataset && e.target.dataset.close) closeGallery();
+  });
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeGallery(); });
+}
