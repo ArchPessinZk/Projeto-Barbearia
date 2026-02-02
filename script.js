@@ -52,7 +52,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Service modal behavior
 const modal = document.getElementById('service-modal');
 const modalThumb = modal && modal.querySelector('.modal-thumb');
 const modalTitle = modal && modal.querySelector('.modal-title');
@@ -131,7 +130,6 @@ if (heroImage) {
   });
 }
 
-// Gallery lightbox
 const galleryModal = document.getElementById('gallery-modal');
 const galleryImg = galleryModal && galleryModal.querySelector('.gallery-modal-img');
 const galleryClose = galleryModal && galleryModal.querySelector('.gallery-modal-close');
